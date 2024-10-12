@@ -1,5 +1,7 @@
 package renato.designpatterns.strategy.controller.dto;
 
+import java.time.LocalDate;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -16,6 +18,6 @@ public record CreatePessoaDTO(
 		String email,
 		@Past
 		@NotNull(message = "Campo 'dataNascimento' não pode estar vazio ou nulo")
-		String dataNascimento) {
+		LocalDate dataNascimento) {
 
 }

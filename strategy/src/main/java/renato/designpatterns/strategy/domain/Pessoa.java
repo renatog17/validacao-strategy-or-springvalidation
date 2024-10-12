@@ -6,11 +6,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import renato.designpatterns.strategy.controller.dto.CreatePessoaDTO;
 
 @Entity
 @Getter
@@ -34,6 +36,13 @@ public class Pessoa {
 		this.cpf = cpf;
 		this.email = email;
 		this.dataNascimento = dataNascimento;
+	}
+
+	public Pessoa(@Valid CreatePessoaDTO createPessoaDTO) {
+		this.nome = createPessoaDTO.nome();
+		this.cpf = createPessoaDTO.cpf();
+		this.email = createPessoaDTO.email();
+		this.dataNascimento = createPessoaDTO.dataNascimento();
 	}
 
 }
