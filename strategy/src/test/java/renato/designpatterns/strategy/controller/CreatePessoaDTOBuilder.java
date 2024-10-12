@@ -2,6 +2,8 @@ package renato.designpatterns.strategy.controller;
 
 import java.time.LocalDate;
 
+import renato.designpatterns.strategy.controller.dto.CreatePessoaDTO;
+
 public class CreatePessoaDTOBuilder {
 
 	private String nome;
@@ -93,5 +95,9 @@ public class CreatePessoaDTOBuilder {
 	public CreatePessoaDTOBuilder withDataNascimentoInThePast() {
 		this.dataNascimento = LocalDate.now().minusDays(10);
 		return this;
+	}
+	//build
+	public CreatePessoaDTO build() {
+		return new CreatePessoaDTO(this.nome, this.cpf, this.email, this.dataNascimento);
 	}
 }
