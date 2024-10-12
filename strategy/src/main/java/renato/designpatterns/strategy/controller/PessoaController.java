@@ -14,7 +14,7 @@ import renato.designpatterns.strategy.domain.Pessoa;
 import renato.designpatterns.strategy.repository.PessoaRepository;
 
 @RestController
-@RequestMapping("/pessoa")
+@RequestMapping("/pessoas")
 public class PessoaController {
 
 	@Autowired
