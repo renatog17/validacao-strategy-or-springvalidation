@@ -44,9 +44,13 @@ public class CreatePessoaDTOBuilder {
 		this.cpf = null;
 		return this;
 	}
+	public CreatePessoaDTOBuilder withCPFEmpty() {
+		this.cpf = "";
+		return this;
+	}
 
 	public CreatePessoaDTOBuilder withCPFInvalid() {
-		this.nome = "12345678910";
+		this.cpf = "12345678910";
 		return this;
 	}
 

@@ -11,6 +11,10 @@ public class CpfValidator implements ConstraintValidator<ValidCpf, String> {
 	}
 
 	private boolean isCpfValid(String cpf) {
+		if (cpf == null || cpf.trim().isEmpty()) {
+	        return false; // Invalid format: cpf cannot be null or empty
+	    }
+
 		cpf = cpf.replaceAll("\\D", "");
 
 		if (cpf == null || cpf.length() != 11 || !cpf.matches("\\d+")) {

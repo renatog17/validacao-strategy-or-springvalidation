@@ -9,10 +9,11 @@ import jakarta.validation.constraints.Past;
 import renato.designpatterns.strategy.validation.ValidCpf;
 
 public record CreatePessoaDTO(
-		@NotNull(message = "Campo 'nome' não pode estar vazio ou nulo")
+		@NotBlank(message = "Campo 'nome' não pode estar vazio ou nulo")
 		String nome,
 		@ValidCpf
-		@NotNull(message = "Campo 'cpf' não pode estar vazio ou nulo")
+		@NotBlank(message = "Campo 'cpf' não pode estar vazio ou nulo")
+		@NotNull
 		String cpf,
 		@Email
 		@NotBlank(message = "Campo 'email' não pode estar vazio ou nulo")

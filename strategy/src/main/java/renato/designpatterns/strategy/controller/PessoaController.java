@@ -28,6 +28,6 @@ public class PessoaController {
 		
 		Pessoa pessoa = new Pessoa(createPessoaDTO);
 		pessoaRepository.save(pessoa);
-		return ResponseEntity.ok().build();
+		return ResponseEntity.created(null).build();
 	}
 }
