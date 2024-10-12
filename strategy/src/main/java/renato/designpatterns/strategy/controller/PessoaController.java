@@ -1,6 +1,5 @@
 package renato.designpatterns.strategy.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +16,11 @@ import renato.designpatterns.strategy.repository.PessoaRepository;
 @RequestMapping("/pessoas")
 public class PessoaController {
 
-	@Autowired
-	PessoaRepository pessoaRepository;
+	private final PessoaRepository pessoaRepository;
+	public PessoaController(PessoaRepository pessoaRepository) {
+		this.pessoaRepository = pessoaRepository;
+	}
+	
 	
 	@PostMapping
 	public ResponseEntity<?> postPessoa(@RequestBody @Valid CreatePessoaDTO createPessoaDTO, 
