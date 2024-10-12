@@ -1,0 +1,1 @@
+# validacao-strategy-or-springvalidation
