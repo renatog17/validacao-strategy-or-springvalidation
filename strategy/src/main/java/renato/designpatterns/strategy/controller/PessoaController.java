@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import jakarta.validation.Valid;
 import renato.designpatterns.strategy.controller.dto.CreatePessoaDTO;
 import renato.designpatterns.strategy.domain.Pessoa;
 import renato.designpatterns.strategy.repository.PessoaRepository;
@@ -23,7 +22,7 @@ public class PessoaController {
 	
 	
 	@PostMapping
-	public ResponseEntity<?> postPessoa(@RequestBody @Valid CreatePessoaDTO createPessoaDTO, 
+	public ResponseEntity<?> postPessoa(@RequestBody CreatePessoaDTO createPessoaDTO, 
 		UriComponentsBuilder uriComponentsBuilder){
 		
 		Pessoa pessoa = new Pessoa(createPessoaDTO);

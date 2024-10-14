@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,7 +37,7 @@ public class Pessoa {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public Pessoa(@Valid CreatePessoaDTO createPessoaDTO) {
+	public Pessoa(CreatePessoaDTO createPessoaDTO) {
 		this.nome = createPessoaDTO.nome();
 		this.cpf = createPessoaDTO.cpf();
 		this.email = createPessoaDTO.email();
