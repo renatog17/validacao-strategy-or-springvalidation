@@ -1,14 +1,19 @@
 package renato.designpatterns.strategy.service.strategy;
 
+
+
 public class IsStringACPF implements Validation<String>{
 	@Override
     public Boolean validar(String cpf) {
+		if(cpf==null) {
+			return false;
+		}
         cpf = cpf.replaceAll("[^\\d]", "");
         if (cpf.length() != 11) {
-            return false;
+        	return false;
         }
         if (cpf.matches("(\\d)\\1{10}")) {
-            return false;
+        	return false;
         }
         return isValidCPF(cpf);
     }

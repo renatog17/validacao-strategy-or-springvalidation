@@ -4,9 +4,10 @@ public class IsStringEmpty implements Validation<String>{
 
 	@Override
 	public Boolean validar(String string) {
+		if(string==null) return false;
 		if(string.equals(""))
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 
 }
